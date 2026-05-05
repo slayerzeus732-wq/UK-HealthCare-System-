@@ -923,4 +923,14 @@ public class MainView extends JFrame {
         JOptionPane.showMessageDialog(this, details,
                 "Referral Details", JOptionPane.INFORMATION_MESSAGE);
     }
+
+    public static void main(String[] args) {
+        // Initialize the application context
+        AppContext.init();
+
+        // Start the GUI on the Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            new MainView().setVisible(true);
+        });
+    }
 }
